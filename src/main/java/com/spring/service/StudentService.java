@@ -5,6 +5,11 @@ import com.spring.model.Student;
 import java.util.List;
 
 public interface StudentService {
-    public List<Student> getStudents();
+    List<Student> getStudents();
 
+    void addStudent(Student theStudent);
+
+    void delete(int theId);
+
+    Student getStudent(int theId);
 }

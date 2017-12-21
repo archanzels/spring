@@ -6,7 +6,11 @@ import java.util.List;
 
 public interface StudentDAO {
 
-    public List<Student> getStudents();
+    List<Student> getStudents();
 
-    public void delete(int id);
+    void delete(int id);
+
+    void addStudent(Student theStudent);
+
+    Student getStudent(int theId);
 }

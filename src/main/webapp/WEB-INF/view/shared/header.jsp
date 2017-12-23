@@ -10,10 +10,43 @@
 <html>
 <head>
     <title></title>
+    <%--Bootstrap Core CSS--%>
+    <link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
+
+    <%--Fonts--%>
+    <link href="<c:url value="/resources/vendor/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
+
+    <%--Custom style for this template--%>
+    <link href="<c:url value="/resources/css/sb-admin.css"/> " rel="stylesheet"/>
+
+    <!-- Page level plugin CSS-->
+    <link href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"/>" rel="stylesheet"/>
 </head>
 <body>
-<a href="${pageContext.request.contextPath}/student/list">Student</a>
-<form:form action="/logout" method="post">
-<input type="submit" value="Log Out">
-</form:form>
-
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="#">MyApp</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="${pageContext.request.contextPath}/student/list">
+                    <i class="fa fa-fw fa-graduation-cap"></i>
+                    <span class="nav-link-text">Students</span>
+                </a>
+            </li>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="shared/header.jsp" %>
-<br>
-Welcome to Spring MVC using Intellij
+
 
 <%@include file="shared/footer.jsp" %>

@@ -1,5 +1,7 @@
 package com.spring.model;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +12,7 @@ public class Student {
     @Column(name = "id")
     private int id;
 
+    @NotBlank
     @Column(name = "name")
     private String name;
 

@@ -17,6 +17,7 @@
                     <form:hidden path="id"/>
                     <label>First Name</label>
                     <form:input path="name" cssClass="form-control"/>
+                    <form:errors path="name" cssClass="error"/>
                 </div>
             </div>
         </div>

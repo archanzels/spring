@@ -5,8 +5,10 @@ import com.spring.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -31,9 +33,13 @@ public class StudentController {
     }
 
     @PostMapping("/save")
-    public String saveStudent(@ModelAttribute("student") Student theStudent) {
-        studentService.addStudent(theStudent);
-        return "redirect:/student/list";
+    public String saveStudent(@ModelAttribute("student") @Valid Student theStudent, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "student/student-form";
+        } else {
+            studentService.addStudent(theStudent);
+            return "redirect:/student/list";
+        }
     }
 
     @GetMapping("/delete")

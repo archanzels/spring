@@ -20,7 +20,13 @@
     <link href="<c:url value="/resources/css/sb-admin.css"/> " rel="stylesheet"/>
 
     <!-- Page level plugin CSS-->
-    <link href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"/>" rel="stylesheet"/>
+    <link href="<c:url value="/resources/vendor/dataTables/dataTables.bootstrap4.css"/>" rel="stylesheet">
+
+    <style>
+        .error {
+            color: darkred;
+        }
+    </style>
 </head>
 <body>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -33,15 +39,21 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <ul class="navbar-nav navbar-sidenav">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="${pageContext.request.contextPath}/">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Dashboard</span>
+                </a>
+            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="${pageContext.request.contextPath}/student/list">
                     <i class="fa fa-fw fa-graduation-cap"></i>
                     <span class="nav-link-text">Students</span>
                 </a>
             </li>
-            </li>
         </ul>
+
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">

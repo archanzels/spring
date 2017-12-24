@@ -16,8 +16,14 @@
             </div>
             <div class="card-body">
                 <div class="row">
+                    <%--Add Button--%>
                     <div class="col-md-2">
-                        <a href="/student/showAddForm" class="btn btn-success btn-block">Add</a>
+                        <a href="/student/showAddForm" class="btn btn-outline-success btn-block">Add</a>
+                    </div>
+
+                    <%--Import Button--%>
+                    <div class="col-md-2">
+                        <a href="#" class="btn btn-outline-primary btn-block">Import</a>
                     </div>
                 </div>
                 <hr>
@@ -27,14 +33,14 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th colspan="2">Action</th>
+                            <th colspan="2" style="text-align: center;">Action</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Action</th>
+                            <th colspan="2" style="text-align: center;">Action</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -52,9 +58,35 @@
                             <tr>
                                 <td>${tempStudent.id}</td>
                                 <td>${tempStudent.name}</td>
-                                <td><a href="${deleteLink}">Delete</a></td>
-                                <td><a href="${updateLink}">Update</a></td>
+                                <td>
+                                    <a class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteModal"
+                                       style="color: white;">Delete</a>
+                                </td>
+                                <td><a class="btn btn-dark btn-block" href="${updateLink}">Update</a></td>
                             </tr>
+
+                            <!-- Delete Modal-->
+                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                                 aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteModalLabel">Are you Sure?</h5>
+                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">X</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">Click confirm to delete the item.</div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                            <a class="btn btn-primary" href="${deleteLink}">Confirm</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </c:forEach>
                         </tbody>
                     </table>

@@ -45,6 +45,5 @@
 <%--Custom Script for all pages--%>
 <script src="/resources/js/sb-admin.min.js"></script>
 
-
 </body>
 </html>

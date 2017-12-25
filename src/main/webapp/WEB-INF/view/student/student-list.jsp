@@ -45,6 +45,7 @@
                         </tfoot>
                         <tbody>
                         <c:forEach var="tempStudent" items="${students}">
+
                             <%--Delete Link--%>
                             <c:url var="deleteLink" value="/student/delete">
                                 <c:param name="studentId" value="${tempStudent.id}"/>
@@ -58,35 +59,10 @@
                             <tr>
                                 <td>${tempStudent.id}</td>
                                 <td>${tempStudent.name}</td>
-                                <td>
-                                    <a class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteModal"
-                                       style="color: white;">Delete</a>
-                                </td>
                                 <td><a class="btn btn-dark btn-block" href="${updateLink}">Update</a></td>
+                                <td><a class="btn btn-danger btn-block" href="${deleteLink}"
+                                       onclick="return confirm('Are you Sure?');">Delete</a></td>
                             </tr>
-
-                            <!-- Delete Modal-->
-                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
-                                 aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="deleteModalLabel">Are you Sure?</h5>
-                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">X</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">Click confirm to delete the item.</div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">
-                                                Cancel
-                                            </button>
-                                            <a class="btn btn-primary" href="${deleteLink}">Confirm</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </c:forEach>
                         </tbody>
                     </table>

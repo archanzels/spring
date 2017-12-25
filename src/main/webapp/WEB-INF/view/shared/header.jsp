@@ -52,6 +52,20 @@
                     <span class="nav-link-text">Students</span>
                 </a>
             </li>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="${pageContext.request.contextPath}/share/list">
+                    <i class="fa fa-fw fa-money"></i>
+                    <span class="nav-link-text">Shares</span>
+                </a>
+            </li>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-database"></i>
+                    <span class="nav-link-text">Stock Database</span>
+                </a>
+            </li>
         </ul>
 
         <ul class="navbar-nav ml-auto">

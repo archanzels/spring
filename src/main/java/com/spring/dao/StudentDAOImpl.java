@@ -43,4 +43,14 @@ public class StudentDAOImpl implements StudentDAO {
         return theStudent;
     }
 
+    @Override
+    public void uploadFromExcel(List<Student> students) {
+        Session session = sessionFactory.getCurrentSession();
+        if (students != null && students.size() > 0) {
+            for (Student student : students) {
+                session.saveOrUpdate(student);
+            }
+        }
+    }
+
 }

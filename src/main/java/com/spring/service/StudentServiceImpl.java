@@ -37,4 +37,10 @@ public class StudentServiceImpl implements StudentService {
     public Student getStudent(int theId) {
         return studentDAO.getStudent(theId);
     }
+
+    @Override
+    @Transactional
+    public void uploadFromExcel(List<Student> studentList) {
+        studentDAO.uploadFromExcel(studentList);
+    }
 }

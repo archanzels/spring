@@ -23,7 +23,7 @@
 
                     <%--Import Button--%>
                     <div class="col-md-2">
-                        <a href="#" class="btn btn-outline-primary btn-block">Import</a>
+                        <a href="/student/upload" class="btn btn-outline-primary btn-block">Import</a>
                     </div>
                 </div>
                 <hr>

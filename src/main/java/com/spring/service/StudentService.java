@@ -12,4 +12,6 @@ public interface StudentService {
     void delete(int theId);
 
     Student getStudent(int theId);
+
+    void uploadFromExcel(List<Student> studentList);
 }

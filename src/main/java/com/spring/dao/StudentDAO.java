@@ -13,4 +13,6 @@ public interface StudentDAO {
     void addStudent(Student theStudent);
 
     Student getStudent(int theId);
+
+    void uploadFromExcel(List<Student> students);
 }

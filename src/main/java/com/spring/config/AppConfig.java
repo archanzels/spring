@@ -29,20 +29,22 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     }
 
     @Override
+    @Description("Specify the resource locations")
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
     }
 
-    //    Define message source
     @Bean
+    @Description("Custom message for validation")
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasename("messages");
         return messageSource;
     }
 
-    //    MultiPart Resolver for file upload
+
     @Bean
+    @Description("MultiPart Resolver for file upload")
     public CommonsMultipartResolver multipartResolver() {
         CommonsMultipartResolver resolver = new CommonsMultipartResolver();
         resolver.setDefaultEncoding("utf-8");

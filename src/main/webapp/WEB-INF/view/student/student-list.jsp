@@ -18,12 +18,13 @@
                 <div class="row">
                     <%--Add Button--%>
                     <div class="col-md-2">
-                        <a href="/student/showAddForm" class="btn btn-outline-success btn-block">Add</a>
+                        <a href="<c:url value="/student/showAddForm"/>"
+                           class="btn btn-outline-success btn-block">Add</a>
                     </div>
 
                     <%--Import Button--%>
                     <div class="col-md-2">
-                        <a href="/student/upload" class="btn btn-outline-primary btn-block">Import</a>
+                        <a href="<c:url value="/student/upload"/>" class="btn btn-outline-primary btn-block">Import</a>
                     </div>
                 </div>
                 <hr>

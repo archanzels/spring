@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="shared/header.jsp" %>
+
 <div class="content-wrapper">
     <div class="container-fluid">
         <div class="row">

@@ -36,14 +36,18 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="/resources/vendor/jquery/jquery.min.js"></script>
-<script src="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<c:url var="coreJS1" value="/resources/vendor/jquery/jquery.min.js"/>
+<c:url var="coreJS2" value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>
+<script src="${coreJS1}"></script>
+<script src="${coreJS2}"></script>
 
 <%--Core Plugin JavaScript--%>
-<script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+<c:url var="corepluginJS" value=""/>
+<script src="${corepluginJS}"></script>
 
 <%--Custom Script for all pages--%>
-<script src="/resources/js/sb-admin.min.js"></script>
+<c:url var="customJS" value=""/>
+<script src="${customJS}"></script>
 
 </body>
 </html>

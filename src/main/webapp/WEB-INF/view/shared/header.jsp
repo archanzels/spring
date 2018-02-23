@@ -7,6 +7,7 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
     <title></title>
@@ -28,7 +29,6 @@
         }
     </style>
 </head>
-<body>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -60,12 +60,14 @@
                 </a>
             </li>
 
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-fw fa-database"></i>
-                    <span class="nav-link-text">Stock Database</span>
-                </a>
-            </li>
+            <sec:authorize access="hasRole('ADMIN')">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-fw fa-database"></i>
+                        <span class="nav-link-text">Stock Database</span>
+                    </a>
+                </li>
+            </sec:authorize>
         </ul>
 
         <ul class="navbar-nav ml-auto">

@@ -18,7 +18,7 @@
                 <div class="row">
                     <%--Add Button--%>
                     <div class="col-md-2">
-                        <a href="/share/add" class="btn btn-outline-success btn-block">Add</a>
+                        <a href="<c:url value="/share/add"/>" class="btn btn-outline-success btn-block">Add</a>
                     </div>
                 </div>
                 <hr>

@@ -9,10 +9,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    //    In memory authentication
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
-        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
+        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN", "DBA");
     }
 
     @Override
@@ -20,7 +21,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.
                 csrf().disable(). //disabled for file upload
                 authorizeRequests()
-                .antMatchers("/resources/**").permitAll()
+                .antMatchers("/resources/**", "/registration/**").permitAll()
+                .antMatchers("/stock/**").hasAnyRole("ADMIN", "DBA")
+                .antMatchers("/user/**").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -30,6 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll();
+                .permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/show403");
     }
 }

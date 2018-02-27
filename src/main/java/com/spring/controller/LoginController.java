@@ -25,4 +25,9 @@ public class LoginController {
         }
         return "redirect:/login?logout";
     }
+
+    @GetMapping("/show403")
+    public String showAccessDenied() {
+        return "access_denied";
+    }
 }

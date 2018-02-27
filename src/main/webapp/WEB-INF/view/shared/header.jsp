@@ -8,6 +8,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
     <title></title>
@@ -62,7 +63,7 @@
 
             <sec:authorize access="hasRole('ADMIN')">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="<c:url value="/stock"/>">
                         <i class="fa fa-fw fa-database"></i>
                         <span class="nav-link-text">Stock Database</span>
                     </a>
@@ -71,6 +72,9 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <security:authentication property="principal.username"/></a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
                     <i class="fa fa-fw fa-sign-out"></i>Logout</a>

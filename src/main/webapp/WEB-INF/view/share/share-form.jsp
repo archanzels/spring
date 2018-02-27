@@ -27,11 +27,7 @@
                             </form:select>
                             <form:errors path="stock" cssClass="error"/>
                         </div>
-                            <%-- <div class="col-md-9">
-                                 <label>Stock Name</label>
-                                 <form:input path="stock.name" cssClass="form-control"/>
-                                 <form:errors path="stock.name" cssClass="error"/>
-                             </div>--%>
+
                     </div>
 
                     <div class="form-row">

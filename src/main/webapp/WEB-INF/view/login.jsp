@@ -41,7 +41,7 @@
             <a class="btn btn-success btn-block btn-small pull-right"
                href="<c:url value='/registration/showForm'/>">Sign Up</a>
             <hr>
-            <form:form action="${pageContext.request.contextPath}/authenticateUser" method="post"
+            <form:form action="${pageContext.request.contextPath}/login" method="post"
                        modelAttribute="successMsg">
             <div class="form-group">
                 Username:<input class="form-control" type="text" placeholder="Enter username" name="username"

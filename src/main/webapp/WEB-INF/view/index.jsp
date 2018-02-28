@@ -6,14 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="shared/header.jsp" %>
-<form:form modelAttribute="userName"></form:form>
 <div class="content-wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-3 col-sm-6 mb-3">
                 <div class="card text-white bg-primary o-hidden h-100">
                     <div class="card-body">
-                        <div class="mr-5">Welcome ${userName}</div>
+                        <%--<div class="mr-5">Welcome ${userName}</div>--%>
                     </div>
                 </div>
             </div>

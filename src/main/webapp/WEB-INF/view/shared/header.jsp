@@ -61,7 +61,7 @@
                 </a>
             </li>
 
-            <sec:authorize access="hasRole('ADMIN')">
+            <sec:authorize url="/stock">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                     <a class="nav-link" href="<c:url value="/stock"/>">
                         <i class="fa fa-fw fa-database"></i>
@@ -73,7 +73,7 @@
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#"> <security:authentication property="principal.username"/></a>
+                <%--<a class="nav-link" href="#"> <security:authentication property="principal.getName()"/></a>--%>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
